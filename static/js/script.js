@@ -9,3 +9,7 @@ $(document).ready(function () {
    $(document).ready(function(){
     $('.tooltipped').tooltip();
   });
+
+    $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
