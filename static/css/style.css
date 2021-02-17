@@ -5,3 +5,13 @@
 .flashes h4 {
     line-height:2;
 }
+
+.btn-small {
+    margin:5px;
+}
+
+.collapsible-header .col strong {
+    margin: 5p;
+    line-height:42px;
+
+}
