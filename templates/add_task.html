@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-blue-text text-darken-4 center-align">Add Recipe</h3>
+    <h3 class="light-blue-text text-darken-4 center-align">Add Task</h3>
 
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('add_task') }}">
@@ -27,31 +27,38 @@
                     <label for="task_name">Recipe Name</label>
                 </div>
             </div>
-            <!-- recipe ingredients -->
+            <!-- task description -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
                     <textarea id="task_description" name="task_description" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="task_description">Ingredients</label>
+                    <label for="task_description">Recipe Description</label>
                 </div>
             </div>
-          
-            <!-- recipe method -->
+  <!-- recipe ingredients -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
                     <textarea id="task_description" name="task_description" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="task_description">Method</label>
+                    <label for="task_description">Recipe Ingredients</label>
                 </div>
             </div>
-		
+             <!-- recipe method -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="task_description" name="task_description" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <label for="task_description">Recipe Method</label>
+                </div>
+            </div>
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Add recipe <i class="fas fa-plus-square right"></i>
+                        Add Task <i class="fas fa-plus-square right"></i>
                     </button>
                 </div>
             </div>
