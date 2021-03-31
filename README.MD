@@ -1,22 +1,24 @@
-UX
+
 This is the milestone project that I have created for the “Data Centric Development” module, which is part of “Full Stack Web Development Course” offered by Code Institute.
 
 I love cooking and trying new recipes. I usually collect recipes from Youtube and other public sites and adapt them to my taste. This was a perfect opportunity to build a cookbook application where I can save all my favorite recipes at one source and share with my friends who ask me for recipes. 
 It also allows others to add and store their recipes securely.
 
 User Stories
+
 As a user, I want to be able to:
 
-view the recipes from any device (mobile, tablet, desktop).
-see recipes from other users to get new ideas.
-view all recipes as a Guest.
-search any specific recipe.
-Login and add my recipes.[Create]
-Get the instruction to make a dish from this site.[Read]
-Edit the recipes I've added.[Edit]
-Delete the recipes I've submitted.[Delete]
+-View the recipes from any device (mobile, tablet, desktop).
+-See recipes from other users to get new ideas.
+-View all recipes as a Guest.
+-Search any specific recipe.
+-Login and add my recipes.[Create]
+-Get the instruction to make a dish from this site.[Read]
+-Edit the recipes I've added.[Edit]
+-Delete the recipes I've submitted.[Delete]
 
 Design Framework
+
 Materialize 1.0.0
 
 To get a modern and clean layout, I used Materialize as a framework.
@@ -30,7 +32,7 @@ Flask 1.0.2
 Flask is the micro web framework that runs the application
 
 Database
-For the database, I choose MongoDB and this was a great oppertunity to get experience using NoSQL database MongoDB.
+For the database, I chose MongoDB and this was a great oppertunity to get experience using NoSQL database MongoDB.
 
 See the database schema here
 
@@ -69,8 +71,7 @@ The following font was used:
 
 Arial
 
-
-Icon
+Icons
 Materialize icons was used for this project.
 
 Wireframes
@@ -79,7 +80,7 @@ Mock-ups were created early on in this project.
 Features
 Existing Features
 
-For visitors to the site who are not logged in, list items links are available for them to use.
+For visitors to the site who are not logged in, the following links are available for them to use.
 
 a. Home
 
@@ -87,7 +88,7 @@ b. Login
 
 c. Register
 
-For users who are logged in, the list items are as follows:
+For users who are logged in, the list of items is as follows:
 
 a. Home
 
@@ -96,6 +97,18 @@ b. Profile
 c. New Recipe
 
 d. Logout
+
+For admin users, the list of items is:
+
+a. Home
+
+b. Profile
+
+c. New Recipe
+
+d. Manage Categories
+
+e. Logout
 
 Register User
 
@@ -123,7 +136,7 @@ Search recipe
 
 If a user would like to search for something specific, there is a search functionality on the home page.
 
-Add a Recipe
+New Recipe
 
 [CRUD] Create or 'add' a new recipe.
 
@@ -144,7 +157,9 @@ Delete Recipe
 If the user clicks the Done button, the user can delete a recipe. 
 
 Technologies Used
+
 Languages
+
 HTML used as the markup language
 
 CSS used as the base for cascading styles.
