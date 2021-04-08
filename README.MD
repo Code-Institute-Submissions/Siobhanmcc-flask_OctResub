@@ -1,10 +1,11 @@
+## Introduction
 
 This is the milestone project that I have created for the “Data Centric Development” module, which is part of “Full Stack Web Development Course” offered by Code Institute.
 
 I love cooking and trying new recipes. I usually collect recipes from Youtube and other public sites and adapt them to my taste. This was a perfect opportunity to build a cookbook application where I can save all my favorite recipes at one source and share with my friends who ask me for recipes. 
 It also allows others to add and store their recipes securely.
 
-User Stories
+## User Stories
 
 As a user, I want to be able to:
 
@@ -17,7 +18,7 @@ As a user, I want to be able to:
 -Edit the recipes I've added.[Edit]
 -Delete the recipes I've submitted.[Delete]
 
-Design Framework
+## Design Framework
 
 Materialize 1.0.0
 
@@ -31,8 +32,8 @@ Flask 1.0.2
 
 Flask is the micro web framework that runs the application
 
-Database
-For the database, I chose MongoDB and this was a great oppertunity to get experience using NoSQL database MongoDB.
+## Database
+For the database, I chose MongoDB and this was a great opportunity to get experience using NoSQL database MongoDB.
 
 See the database schema here
 
@@ -63,21 +64,21 @@ users
   
   password: <string>
 
-Color Scheme
+## Color Scheme
 For the color scheme, I've used blue in the navbar. I chose green and red for some buttons and headings to highlight. 
 
-Typography
+## Typography
 The following font was used:
 
 Arial
 
-Icons
+## Icons
 Materialize icons was used for this project.
 
-Wireframes
+## Wireframes
 Mock-ups were created early on in this project.
 
-Features
+## Features
 Existing Features
 
 For visitors to the site who are not logged in, the following links are available for them to use.
@@ -154,9 +155,13 @@ Delete Recipe
 
 [CRUD] Delete or 'remove' a user's own recipes.
 
-If the user clicks the Done button, the user can delete a recipe. 
+If the user clicks the Done button, the user can delete a recipe.
 
-Technologies Used
+Manage Categories 
+
+A user with admin access can login and add, edit or delete a category. 
+
+## Technologies Used
 
 Languages
 
