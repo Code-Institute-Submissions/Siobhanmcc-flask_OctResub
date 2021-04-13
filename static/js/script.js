@@ -44,7 +44,7 @@ $(document).ready(function () {
         });
     }
 
-    / Add / Remove Ingredients
+    /* Add / Remove Ingredients  */
 
  var ingredientField = $(".ingredient").length;
     $("#add_ingredient").on("click", function () {
