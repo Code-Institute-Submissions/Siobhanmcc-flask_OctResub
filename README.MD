@@ -228,6 +228,10 @@ You can do this with:
 
 Username: siobhan Password: testpassword
 
+or Admin User
+
+Username : Admin Password: ungoo4La
+
 Validation Services
 The following validation services were used to check the validity of the website code.
 
