@@ -394,7 +394,7 @@ https://www.youtube.com/watch?v=vVx1737auSE - To understand how to create the lo
 
 https://www.quackit.com/mongodb/tutorial/mongodb_sort_query_results.cfm
 
-Special thanks to Guido Cecilio Garcia, my Code Institute mentor, for his guidance and advice whilst working on this project and also helping me to sort pagination issues.
+Special thanks to Guido Cecilio Garcia, my Code Institute mentor, for his guidance and advice whilst working on this project.
 
 
 
