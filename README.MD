@@ -301,7 +301,7 @@ I have searched for recipes using the search functionality on the home page. Res
 6. Manage Categories
 
 I have successfully added categories. 
-![](static/images/managecategories.png)
+![](static/images/manage-categories.png)
 ![](static/images/add-category.png)
 
 
