@@ -208,10 +208,10 @@ Balsamiq was used to create the wireframes when initially planning this project
 
 Am I Responsive to create the images in this readme file.
 
-Hosting
+## Hosting
 Heroku is used to host the app
 
-Testing
+## Testing
 Most of the testing was manual testing during the development of the site with additional testing completed at the end, before this write up.
 
 Friends and family have also tested by creating accounts and using the site on their own devices. They have tested how the page displays, registered their own accounts, added their recipes, edited and deleted.
@@ -256,7 +256,7 @@ iPad Mini - Safari Browser
 Desktop - Chrome v.74
 Desktop - Firefox v.67
 
-Features Testing
+## Features Testing
 Creating an Account
 
 1. I've created my own account, and other accounts to confirm authentication and validation for creatiing account and all worked as expected.
@@ -305,7 +305,7 @@ I have successfully added categories.
 ![](static/images/add-category.png)
 
 
-Deployment
+## Deployment
 Deployment To Heroku
 In order the deploy my project to Heroku I have completed the following steps:
 
@@ -372,14 +372,14 @@ Your database should be named cook_book with collections set up as outlined in t
 
 From the terminal you can then run the app with python app.py and view in a browser at http://127.0.0.1:5000/
 
-Credits
+## Credits
 
 Content
 The recipes for the cookbook were sourced from various sources.
 
 The text for some of the recipe categories was taken from Wikipedia.
 
-Acknowledgements
+## Acknowledgements
 Tutorials
 
 https://www.tutorialspoint.com
