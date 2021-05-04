@@ -3,7 +3,7 @@
 This is the milestone project that I have created for the “Data Centric Development” module, which is part of “Full Stack Web Development Course” offered by Code Institute.
 
 I love cooking and trying new recipes. I usually collect recipes from Youtube and other public sites and adapt them to my taste. This was a perfect opportunity to build a cookbook application where I can save all my favorite recipes at one source and share with my friends who ask me for recipes. 
-It also allows others to add and store their recipes securely.
+It also allows others to add and store their recipes securely. The link for the site is here: http://flask-project-milestone-3.herokuapp.com/login
 
 ![](static/images/recipes-all-devices-scrshot.png)
 
