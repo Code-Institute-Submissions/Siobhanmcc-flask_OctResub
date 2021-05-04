@@ -255,23 +255,55 @@ Apple iPhone 6,7 &8S - Safari Browser
 iPad Mini - Safari Browser
 Desktop - Chrome v.74
 Desktop - Firefox v.67
+
 Features Testing
 Creating an Account
-I've created my own account, and 15 other accounts to confirm authentication and validation for creatiing account and all worked as expected.
 
-Log In To An Existing Account
+1. I've created my own account, and other accounts to confirm authentication and validation for creatiing account and all worked as expected.
+![](static/images/login-admin.png)
+On registering an account, the user receives a message saying "Registration successful".
+![](static/images/registration-successful.png)
 
-The accounts created as part of the previous test were used to test the log in functionality and I was able to log in with each of them.
+2. Log In To An Admin Account
 
-Log Out
+A user can login into an Admin account to see the full functionality of the menu. 
 
-All accounts could also be successfully logged out. Print statements were used in the python console to confirm the username variable had been removed from the session.
+![](static/images/login-admin.png)
 
-Add | View | Edit | Delete a Recipe
+Upon logging in, there are 5 options on the navbar including 'manage categories' which is exclusive to the admin view. The user is directed to the Profile page.
 
-I've edited several recipe's recipe description, adding ingredients or changing preparation methods, to test the functionality of updating a recipe to the database. The data validation is the same as Add Recipe and works as it should.
+![](static/images/profile-page.png)
 
-Tested edit and delete button were available for the owner of the recipes, and disabled for others.
+3. Log Out
+
+Upon logging out of the application, a user receives a notification saying "You have been logged out".
+![](static/images/logout.png)
+
+4. New Recipe 
+
+I have successfully added new recipes.
+
+![](static/images/new-recipe-1.png)
+
+These recipes are then visible on the home page and can be edited or deleted from there.
+
+![](static/images/home-page.png)
+
+![](static/images/edit-task.png)
+
+5. Search functionality
+
+I have searched for recipes using the search functionality on the home page. Results come back correctly.
+
+![](static/images/search.png)
+![](static/images/search-results.png)
+
+6. Manage Categories
+
+I have successfully added categories. 
+![](static/images/managecategories.png)
+![](static/images/add-category.png)
+
 
 Deployment
 Deployment To Heroku
