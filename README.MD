@@ -260,7 +260,7 @@ Desktop - Firefox v.67
 Creating an Account
 
 1. I've created my own account, and other accounts to confirm authentication and validation for creatiing account and all worked as expected.
-![](static/images/login-admin.png)
+![](static/images/register.png)
 On registering an account, the user receives a message saying "Registration successful".
 ![](static/images/registration-successful.png)
 
