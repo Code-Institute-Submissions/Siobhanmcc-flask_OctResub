@@ -5,6 +5,8 @@ This is the milestone project that I have created for the “Data Centric Develo
 I love cooking and trying new recipes. I usually collect recipes from Youtube and other public sites and adapt them to my taste. This was a perfect opportunity to build a cookbook application where I can save all my favorite recipes at one source and share with my friends who ask me for recipes. 
 It also allows others to add and store their recipes securely.
 
+![](static/images/recipes-all-devices-scrshot.png)
+
 ## User Stories
 
 As a user, I want to be able to:
@@ -77,6 +79,12 @@ Materialize icons was used for this project.
 
 ## Wireframes
 Mock-ups were created early on in this project.
+
+![](static/images/login.png)
+![](static/images/profile.png)
+![](static/images/home.png)
+![](static/images/newrecipe.png)
+![](static/images/managecategories.png)
 
 ## Features
 Existing Features
