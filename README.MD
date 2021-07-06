@@ -136,13 +136,13 @@ d. Manage Categories
 
 e. Logout
 
-Register User
+### Register User
 
 Users can use the site as a guest, but some features are not available unless logged in.I have built-in authentication and authorization to check certain criteria is met before an account is validated. All passwords are hashed for security purposes!
 
 When a user registers,they are automatically logged in and directed to the Profile page.
 
-Log In to Account
+### Log In to Account
 
 The login page has an input form like register form where the users will enter their username and password.
 
@@ -150,39 +150,39 @@ If the username is not registered or if the password is incorrect an error messa
 
 New users can click on the link "Register here" to get redirected to the register page.
 
-Log Out of Account
+### Log Out of Account
 
 Users can easily log out of their account with the click of a button.
 
-Home
+### Home
 
 On the home page, all recipes are displayed.
 
-Search recipe
+### Search recipe
 
 If a user would like to search for something specific, there is a search functionality on the home page.
 
-New Recipe
+### New Recipe
 
 [CRUD] Create or 'add' a new recipe.
 
 Logged in users can add their recipes.
 
-View Recipe
+### View Recipe
 
 [CRUD] Read or 'review' recipes, from the home page.
 
-Update Recipe
+### Update Recipe
 
 [CRUD] Update or 'edit' their own user recipes from the home page.
 
-Delete Recipe
+### Delete Recipe
 
 [CRUD] Delete or 'remove' a user's own recipes.
 
 If the user clicks the Done button, the user can delete a recipe.
 
-Manage Categories 
+### Manage Categories 
 
 A user with admin access can login and add, edit or delete a category. 
 
