@@ -65,10 +65,14 @@ The database is made up of the following collections
    
    id: <ObjectId()>
 
-   category_name: <string>
-   task_name: <string>
-   task_description: <string>
-   created_by: <string>
+   category_name: <string>  
+
+   task_name: <string>  
+
+   task_description: <string>  
+
+   created_by: <string>  
+   
 
 
 *users*
