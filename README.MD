@@ -104,9 +104,9 @@ Mock-ups were created early on in this project.
 ![](static/images/managecategories.png)
 
 ## Features
-Existing Features
+### Existing Features
 
-For visitors to the site who are not logged in, the following links are available for them to use.
+*For visitors to the site who are not logged in, the following links are available for them to use.*
 
 a. Home
 
@@ -114,7 +114,7 @@ b. Login
 
 c. Register
 
-For users who are logged in, the list of items is as follows:
+*For users who are logged in, the list of items is as follows:*
 
 a. Home
 
@@ -124,7 +124,7 @@ c. New Recipe
 
 d. Logout
 
-For admin users, the list of items is:
+*For admin users, the list of items is:*
 
 a. Home
 
@@ -235,11 +235,11 @@ Friends and family have also tested by creating accounts and using the site on t
 
 To test the site yourself, you can
 
-Browse as a guest, but with limited functionality.
+- Browse as a guest, but with limited functionality.
 
-Create your own user. 
+- Create your own user. 
 
-Use an existing user to see how the app handles user recipes
+- Use an existing user to see how the app handles user recipes
 
 You can do this with:
 
@@ -249,7 +249,8 @@ or Admin User
 
 Username : Admin Password: ungoo4La
 
-Validation Services
+## Validation Services
+
 The following validation services were used to check the validity of the website code.
 
 W3C Markup Validation was used to validate HTML.
@@ -266,7 +267,8 @@ PEP8 Online was used to validate Python.
 
 app.py file is completely PEP8 compliant!
 
-Responsiveness
+Responsiveness  
+
 Chrome DevTools and physical devices were used throughout development for a number of purposes, one of which was to test the responsiveness and rendering across a range of sizes and devices. As issues were found they were either fixed at the time or noted and returned to later.
 
 The site has been tested successfully on
