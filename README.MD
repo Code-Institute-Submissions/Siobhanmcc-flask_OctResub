@@ -11,6 +11,8 @@ It also allows others to add and store their recipes securely. The link for the 
 
 As a regular user, I want to be able to:
 
+-Register as a new user
+
 -View the recipes from any device (mobile, tablet, desktop).  
 
 -See recipes from other users to get new ideas.  
@@ -25,7 +27,7 @@ As a regular user, I want to be able to:
 
 -Edit the recipes I've added.[Edit]  
 
--Delete the recipes I've submitted.[Delete]  
+-Delete the recipes I've submitted.[Delete]    
 
 As an admin user, I want to be able to:  
 
@@ -53,13 +55,13 @@ See the database schema here
 
 The database is made up of the following collections
 
-categories
+*categories*
 
    id: <ObjectId()>
 
    category_name: <string>
 
-tasks
+*tasks*
    
    id: <ObjectId()>
 
@@ -68,9 +70,8 @@ tasks
    task_description: <string>
    created_by: <string>
 
-   
 
-users
+*users*
 
   id: <ObjectId()>
   
