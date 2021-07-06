@@ -88,14 +88,13 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
+    if is_authenticated():
+        username = mongo.db.users.find_one_or_404(
+            {"username": session["user"]})["username"]
         return render_template("profile.html", username=username)
-
-    return redirect(url_for("login"))
+    else:
+        flash('You are currently not logged in')
+        return redirect(url_for("login"))
 
 
 @app.route("/logout")
@@ -182,7 +181,7 @@ def edit_category(category_id):
         flash("Category Successfully Updated")
         return redirect(url_for("get_categories"))
 
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    category = mongo.db.categories.find_one_or_404({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
 
@@ -193,7 +192,33 @@ def delete_category(category_id):
     return redirect(url_for("get_categories"))
 
 
+def is_authenticated():
+    """ Ensure that user is authenticated
+    """
+    return 'user' in session
+
+
+# Custom Error Handling
+# 404 Error Page not found
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
+
+
+# 500 Error Server Error
+@app.errorhandler(500)
+def internal_server(error):
+    return render_template('500.html'), 500
+
+
+# 405 Error Method
+@app.errorhandler(405)
+def method_not_allowed(error):
+    return render_template('405.html'), 405
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+

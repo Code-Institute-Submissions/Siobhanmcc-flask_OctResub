@@ -11,14 +11,22 @@ It also allows others to add and store their recipes securely. The link for the 
 
 As a user, I want to be able to:
 
--View the recipes from any device (mobile, tablet, desktop).
--See recipes from other users to get new ideas.
--View all recipes as a Guest.
--Search any specific recipe.
--Login and add my recipes.[Create]
--Get the instruction to make a dish from this site.[Read]
--Edit the recipes I've added.[Edit]
--Delete the recipes I've submitted.[Delete]
+-View the recipes from any device (mobile, tablet, desktop).  
+
+-See recipes from other users to get new ideas.  
+
+-View all recipes as a Guest.  
+
+-Search any specific recipe.  
+
+-Login and add my recipes.[Create]  
+
+-Get the instruction to make a dish from this site.[Read]  
+
+-Edit the recipes I've added.[Edit]  
+
+-Delete the recipes I've submitted.[Delete]  
+
 
 ## Design Framework
 
