@@ -154,6 +154,9 @@ def delete_task(task_id):
 
 @app.route("/get_categories")
 def get_categories():
+    if not 'user' in session or session['user'] != 'admin':
+        return redirect(url_for("login"))
+    
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
@@ -200,21 +203,21 @@ def is_authenticated():
 
 # Custom Error Handling
 # 404 Error Page not found
-@app.errorhandler(404)
-def page_not_found(error):
-    return render_template('404.html'), 404
+# @app.errorhandler(404)
+# def page_not_found(error):
+#     return render_template('404.html'), 404
 
 
-# 500 Error Server Error
-@app.errorhandler(500)
-def internal_server(error):
-    return render_template('500.html'), 500
+# # 500 Error Server Error
+# @app.errorhandler(500)
+# def internal_server(error):
+#     return render_template('500.html'), 500
 
 
-# 405 Error Method
-@app.errorhandler(405)
-def method_not_allowed(error):
-    return render_template('405.html'), 405
+# # 405 Error Method
+# @app.errorhandler(405)
+# def method_not_allowed(error):
+#     return render_template('405.html'), 405
 
 
 if __name__ == "__main__":
