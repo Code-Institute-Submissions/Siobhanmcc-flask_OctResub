@@ -201,17 +201,17 @@ def is_authenticated():
     return 'user' in session
 
 
-# Custom Error Handling
+#Custom Error Handling
 # 404 Error Page not found
-# @app.errorhandler(404)
-# def page_not_found(error):
-#     return render_template('404.html'), 404
+@app.errorhandler(404)
+def page_not_found(error):
+  return render_template('404.html'), 404
 
 
 # # 500 Error Server Error
-# @app.errorhandler(500)
-# def internal_server(error):
-#     return render_template('500.html'), 500
+@app.errorhandler(500)
+def internal_server(error):
+ return render_template('500.html'), 500
 
 
 # # 405 Error Method
