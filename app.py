@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template,
+    Flask, flash, render_template, abort,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -34,6 +34,10 @@ def search():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+
+    if is_authenticated():
+        return redirect(url_for("profile", username=session["user"])) 
+        
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -59,6 +63,10 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+
+    if is_authenticated():
+        return redirect(url_for("profile", username=session["user"])) 
+
     if request.method == "POST":
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
@@ -99,14 +107,25 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookie
+    # If not user in session Redirect to home page
+    if not is_authenticated():
+        flash("You are currently not logged in")
+        return redirect(url_for('login'))
+
+    # remove user from session cookies
     flash("You have been logged out")
-    session.pop("user")
-    return redirect(url_for("login"))
+    session.pop('user')
+
+    return redirect(url_for('login'))
 
 
 @app.route("/add_task", methods=["GET", "POST"])
 def add_task():
+
+    if not is_authenticated():
+        flash("You are currently not logged in")
+        return redirect(url_for('login'))
+
     if request.method == "POST":
         is_urgent = "on" if request.form.get("is_urgent") else "off"
         task = {
@@ -127,6 +146,16 @@ def add_task():
 
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
+
+    if not is_authenticated():
+        flash("You are currently not logged in")
+        return redirect(url_for('login'))
+
+    if not is_object_id_valid(task_id):
+        abort(404)
+
+    task = mongo.db.tasks.find_one_or_404({"_id": ObjectId(task_id)})
+
     if request.method == "POST":
         is_urgent = "on" if request.form.get("is_urgent") else "off"
         submit = {
@@ -139,14 +168,23 @@ def edit_task(task_id):
         }
         mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
         flash("Task Successfully Updated")
-
-    task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+        return render_template(url_for("get_task"))
+        
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_task.html", task=task, categories=categories)
 
 
 @app.route("/delete_task/<task_id>")
 def delete_task(task_id):
+
+    if not is_authenticated():
+        flash("You are currently not logged in")
+        return redirect(url_for('login'))
+
+    if not is_object_id_valid(task_id):
+        abort(404)
+
+    mongo.db.tasks.find_one_or_404({"_id": ObjectId(task_id)})
     mongo.db.tasks.remove({"_id": ObjectId(task_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("get_tasks"))
@@ -154,8 +192,10 @@ def delete_task(task_id):
 
 @app.route("/get_categories")
 def get_categories():
-    if not 'user' in session or session['user'] != 'admin':
-        return redirect(url_for("login"))
+
+    if not is_authenticated() or session['user'] != 'admin':
+        flash("You are currently not logged in")
+        return redirect(url_for('login'))
     
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
@@ -163,6 +203,11 @@ def get_categories():
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+
+    if not is_authenticated() or session['user'] != 'admin':
+        flash("You are currently not logged in")
+        return redirect(url_for('login'))
+
     if request.method == "POST":
         category = {
             "category_name": request.form.get("category_name")
@@ -176,20 +221,39 @@ def add_category():
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
+
+    if not is_authenticated() or session['user'] != 'admin':
+        flash("You are currently not logged in")
+        return redirect(url_for('login'))
+
+    if not is_object_id_valid(category_id):
+        abort(404)
+
+    category = mongo.db.categories.find_one_or_404({"_id": ObjectId(category_id)})
+
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name")
         }
+        
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("Category Successfully Updated")
         return redirect(url_for("get_categories"))
 
-    category = mongo.db.categories.find_one_or_404({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
 
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
+
+    if not is_authenticated() or session['user'] != 'admin':
+        flash("You are currently not logged in")
+        return redirect(url_for('login'))
+
+    if not is_object_id_valid(category_id):
+        abort(404)
+
+    mongo.db.categories.find_one_or_404({"_id": ObjectId(category_id)})
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
@@ -199,6 +263,16 @@ def is_authenticated():
     """ Ensure that user is authenticated
     """
     return 'user' in session
+
+
+def is_admin():
+    return is_authenticated() and session['user'] == 'admin'
+
+
+def is_object_id_valid(id_value):
+    """ Validate is the id_value is a valid ObjectId
+    """
+    return id_value != "" and ObjectId.is_valid(id_value)
 
 
 #Custom Error Handling
@@ -212,12 +286,6 @@ def page_not_found(error):
 @app.errorhandler(500)
 def internal_server(error):
  return render_template('500.html'), 500
-
-
-# # 405 Error Method
-# @app.errorhandler(405)
-# def method_not_allowed(error):
-#     return render_template('405.html'), 405
 
 
 if __name__ == "__main__":
