@@ -54,13 +54,13 @@ The database is made up of the following collections
 | category_name | string |
 
 
-### *tasks*
+### *recipes*
 | Property name | Type |
 | ---- | ------- |
 | id | ObjectId |
 | category_name | string |
-| task_name | string | 
-| task_description | string |
+| recipe_name | string | 
+| recipe_description | string |
 | created_by | string  |
 
 ### *users*
