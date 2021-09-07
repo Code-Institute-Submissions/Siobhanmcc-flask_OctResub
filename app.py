@@ -136,7 +136,7 @@ def add_recipe():
             "due_date": request.form.get("due_date"),
             "created_by": session["user"]
         }
-        mongo.db.tasks.insert_one(recipe)
+        mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
 
@@ -154,7 +154,7 @@ def edit_recipe(recipe_id):
     if not is_object_id_valid(recipe_id):
         abort(404)
 
-    task = mongo.db.recipes.find_one_or_404({"_id": ObjectId(recipe_id)})
+    recipe = mongo.db.recipes.find_one_or_404({"_id": ObjectId(recipe_id)})
 
     if request.method == "POST":
         is_urgent = "on" if request.form.get("is_urgent") else "off"
@@ -181,7 +181,7 @@ def delete_recipe(recipe_id):
         flash("You are currently not logged in")
         return redirect(url_for('login'))
 
-    if not is_object_id_valid(task_id):
+    if not is_object_id_valid(recipe_id):
         abort(404)
 
     mongo.db.recipes.find_one_or_404({"_id": ObjectId(recipe_id)})
