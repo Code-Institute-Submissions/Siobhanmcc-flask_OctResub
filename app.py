@@ -120,7 +120,7 @@ def logout():
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
-def add_task():
+def add_recipe():
 
     if not is_authenticated():
         flash("You are currently not logged in")
