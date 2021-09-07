@@ -11,27 +11,19 @@ It also allows others to add and store their recipes securely. The link for the 
 
 As a regular user, I want to be able to:
 
--Register as a new user
-
--View the recipes from any device (mobile, tablet, desktop).  
-
--See recipes from other users to get new ideas.  
-
--View all recipes as a Guest.  
-
--Search any specific recipe.  
-
--Login and add my recipes.[Create]  
-
--Get the instruction to make a dish from this site.[Read]  
-
--Edit the recipes I've added.[Edit]  
-
--Delete the recipes I've submitted.[Delete]    
+- Register as a new user
+- View the recipes from any device (mobile, tablet, desktop).  
+- See recipes from other users to get new ideas.  
+- View all recipes as a Guest.  
+- Search any specific recipe.  
+- Login and add my recipes.[Create]  
+- Get the instruction to make a dish from this site.[Read]  
+- Edit the recipes I've added.[Edit]  
+- Delete the recipes I've submitted.[Delete]    
 
 As an admin user, I want to be able to:  
 
--Manage categories i.e. add new categories, edit existing ones & delete old ones
+- Manage categories i.e. add new categories, edit existing ones & delete old ones
 
 
 ## Design Framework
@@ -55,33 +47,28 @@ See the database schema here
 
 The database is made up of the following collections
 
-*categories*
-
-   id: <ObjectId()>
-
-   category_name: <string>
-
-*tasks*
-   
-   id: <ObjectId()>
-
-   category_name: <string>  
-
-   task_name: <string>  
-
-   task_description: <string>  
-
-   created_by: <string>  
-   
+### *categories*
+| Property name | Type |
+| ---- | ------- |
+| id | ObjectId |
+| category_name | string |
 
 
-*users*
+### *tasks*
+| Property name | Type |
+| ---- | ------- |
+| id | ObjectId |
+| category_name | string |
+| task_name | string | 
+| task_description | string |
+| created_by | string  |
 
-  id: <ObjectId()>
-  
-  username: <string>
-  
-  password: <string>
+### *users*
+| Property name | Type |
+| ---- | ------- |
+| id | ObjectId |
+| username | string |
+| password | string |
 
 ## Color Scheme
 For the color scheme, I've used blue in the navbar. I chose green and red for some buttons and headings to highlight. 

@@ -12,7 +12,7 @@
                  <label for ="query">Search recipes</label>
              </div>
              <div class="col s12 m4">
-                 <a href="{{url_for('get_tasks')}}" class="red btn text-shadow">Reset</a>
+                 <a href="{{url_for('get_recipes')}}" class="red btn text-shadow">Reset</a>
                  <button type="submit" class="light-blue darken-1 btn text-shadow">
                      <i class="fas fa-search left"></i> Search
                  </button>
@@ -20,30 +20,30 @@
          </div>
      </form>
     </div>
-    {% if tasks|length >0 %}
+    {% if recipes|length >0 %}
     <ul class="collapsible">
-        {% for task in tasks %}
+        {% for recipe in recipes %}
         <li>
             <div class="collapsible-header white-text light-blue darken-4 text-shadow">
                 <div class="col s3">
                     <i class="fas fa-caret-down"></i>
-                    {% if session.user|lower == task.created_by|lower %}
-                        <a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-small green accent-4">Delete</a>
-                        <a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                    {% if session.user|lower == recipe.created_by|lower %}
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small green accent-4">Delete</a>
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                     {% endif %}
                 </div>
                 <div class="col s9">
-                    <strong>{{ task.task_name }}</strong> : {{ task.due_date }}
-                    {% if task.is_urgent == "on" %}
+                    <strong>{{ recipe.recipe_name }}</strong> : {{ recipe.due_date }}
+                    {% if recipe.is_urgent == "on" %}
                         <i class="fas fa-exclamation-circle light-blue-text text-lighten-2 tooltipped"
                             data-position="right" data-tooltip="URGENT!"></i>
                     {% endif %}
                 </div>
             </div>
             <div class="collapsible-body">
-                <strong>{{ task.category_name }}</strong>
-                <p>{{ task.task_description }}</p>
-                <p><em>by: {{ task.created_by }}</em></p>
+                <strong>{{ recipe.category_name }}</strong>
+                <p>{{ recipe.recipe_description }}</p>
+                <p><em>by: {{ recipe.created_by }}</em></p>
             </div>
         </li>
         {% endfor %}
