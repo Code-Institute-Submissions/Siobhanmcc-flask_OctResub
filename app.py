@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/get_recipes")
-def get_tasks():
+def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
@@ -291,5 +291,5 @@ def internal_server(error):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True
+            debug=True)
 
