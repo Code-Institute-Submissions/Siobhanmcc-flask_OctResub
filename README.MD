@@ -95,33 +95,33 @@ Mock-ups were created early on in this project.
 
 *For visitors to the site who are not logged in, the following links are available for them to use.*
 
-a. Home
+ a. Home
 
-b. Login
+ b. Login
 
-c. Register
+ c. Register
 
 *For users who are logged in, the list of items is as follows:*
 
-a. Home
+ a. Home
 
-b. Profile
+ b. Profile
 
-c. New Recipe
+ c. New Recipe
 
-d. Logout
+ d. Logout
 
 *For admin users, the list of items is:*
 
-a. Home
+ a. Home
 
-b. Profile
+ b. Profile
 
-c. New Recipe
+ c. New Recipe
 
-d. Manage Categories
+ d. Manage Categories
 
-e. Logout
+ e. Logout
 
 ### Register User
 
@@ -216,57 +216,6 @@ Am I Responsive to create the images in this readme file.
 Heroku is used to host the app
 
 ## Testing
-Most of the testing was manual testing during the development of the site with additional testing completed at the end, before this write up.
-
-Friends and family have also tested by creating accounts and using the site on their own devices. They have tested how the page displays, registered their own accounts, added their recipes, edited and deleted.
-
-To test the site yourself, you can
-
-- Browse as a guest, but with limited functionality.
-
-- Create your own user. 
-
-- Use an existing user to see how the app handles user recipes
-
-You can do this with:
-
-Username: siobhan Password: testpassword
-
-or Admin User
-
-Username : Admin Password: ungoo4La
-
-## Validation Services
-
-The following validation services were used to check the validity of the website code.
-
-W3C Markup Validation was used to validate HTML.
-
-Unfortunately the W3C Validator for HTML does not understand the Jinja templating syntax, so it therefore shows a lot of errors with regards to {{ variables }}, {% for %} {% endfor %}, etc. Aside from the Jinja warnings and errors, all of the remaining code is perfectly validating. Also due to the Jinja templating, certain elements cannot be 'beautified' across multiple lines, and must remain on a single line.
-
-W3C CSS validation was used to validate CSS.
-
-JSHint was used to validate JavaScript.
-
-The JS file was run through jshint.com and outside of numerous instances of $ being undefined due to using jQuery, there were no errors.
-
-PEP8 Online was used to validate Python.
-
-app.py file is completely PEP8 compliant!
-
-Responsiveness  
-
-Chrome DevTools and physical devices were used throughout development for a number of purposes, one of which was to test the responsiveness and rendering across a range of sizes and devices. As issues were found they were either fixed at the time or noted and returned to later.
-
-The site has been tested successfully on
-
-Apple Macbook Air - Safari browser
-Apple iPhone 6,7 &8S - Safari Browser
-iPad Mini - Safari Browser
-Desktop - Chrome v.74
-Desktop - Firefox v.67
-
-## Features Testing
 Creating an Account
 
 1. I've created my own account, and other accounts to confirm authentication and validation for creatiing account and all worked as expected.
@@ -314,6 +263,43 @@ I have successfully added categories.
 ![](static/images/manage-categories.png)
 ![](static/images/add-category.png)
 
+If you wish to test the site yourself you can do this with:
+
+Username: siobhan Password: testpassword
+
+or Admin User
+
+Username : Admin Password: ungoo4La
+
+## Validation Services
+
+The following validation services were used to check the validity of the website code.
+
+W3C Markup Validation was used to validate HTML.
+
+Unfortunately the W3C Validator for HTML does not understand the Jinja templating syntax, so it therefore shows a lot of errors with regards to {{ variables }}, {% for %} {% endfor %}, etc. Aside from the Jinja warnings and errors, all of the remaining code is perfectly validating. Also due to the Jinja templating, certain elements cannot be 'beautified' across multiple lines, and must remain on a single line.
+
+W3C CSS validation was used to validate CSS.
+
+JSHint was used to validate JavaScript.
+
+The JS file was run through jshint.com and outside of numerous instances of $ being undefined due to using jQuery, there were no errors.
+
+PEP8 Online was used to validate Python.
+
+app.py file is completely PEP8 compliant!
+
+Responsiveness  
+
+Chrome DevTools and physical devices were used throughout development for a number of purposes, one of which was to test the responsiveness and rendering across a range of sizes and devices. As issues were found they were either fixed at the time or noted and returned to later.
+
+The site has been tested successfully on
+
+Apple Macbook Air - Safari browser
+Apple iPhone 6,7 &8S - Safari Browser
+iPad Mini - Safari Browser
+Desktop - Chrome v.74
+Desktop - Firefox v.67
 
 ## Deployment
 Deployment To Heroku

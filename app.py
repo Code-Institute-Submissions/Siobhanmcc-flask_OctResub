@@ -36,8 +36,8 @@ def search():
 def register():
 
     if is_authenticated():
-        return redirect(url_for("profile", username=session["user"])) 
-        
+        return redirect(url_for("profile", username=session["user"]))
+
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -65,7 +65,7 @@ def register():
 def login():
 
     if is_authenticated():
-        return redirect(url_for("profile", username=session["user"])) 
+        return redirect(url_for("profile", username=session["user"]))
 
     if request.method == "POST":
         # check if username exists in db
@@ -169,9 +169,10 @@ def edit_recipe(recipe_id):
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
         return render_template(url_for("get_recipe"))
-        
+
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
+    return render_template("edit_recipe.html", recipe=recipe,
+                           categories=categories)
 
 
 @app.route("/delete_recipe/<recipe_id>")
@@ -196,7 +197,7 @@ def get_categories():
     if not is_authenticated() or session['user'] != 'admin':
         flash("You are currently not logged in")
         return redirect(url_for('login'))
-    
+
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
@@ -229,13 +230,14 @@ def edit_category(category_id):
     if not is_object_id_valid(category_id):
         abort(404)
 
-    category = mongo.db.categories.find_one_or_404({"_id": ObjectId(category_id)})
+    category = mongo.db.categories.find_one_or_404({"_id": ObjectId(
+                                                   category_id)})
 
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name")
         }
-        
+
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("Category Successfully Updated")
         return redirect(url_for("get_categories"))
@@ -275,21 +277,20 @@ def is_object_id_valid(id_value):
     return id_value != "" and ObjectId.is_valid(id_value)
 
 
-#Custom Error Handling
+# Custom Error Handling
 # 404 Error Page not found
 @app.errorhandler(404)
 def page_not_found(error):
-  return render_template('404.html'), 404
+    return render_template('404.html'), 404
 
 
 # # 500 Error Server Error
 @app.errorhandler(500)
 def internal_server(error):
- return render_template('500.html'), 500
+    return render_template('500.html'), 500
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=False)
-
