@@ -28,15 +28,15 @@ As an admin user, I want to be able to:
 
 ## Design Framework
 
-Materialize 1.0.0
+[Materialize 1.0.0](https://materializecss.com/)
 
 To get a modern and clean layout, I used Materialize as a framework.
 
-jQuery 3.4.0
+[jQuery 3.4.0](https://jquery.com/)
 
 Used to manipulate the DOM, for example buttons, and showing / hiding elements
 
-Flask 1.0.2
+[Flask 1.0.2](https://flask.palletsprojects.com/en/2.0.x/)
 
 Flask is the micro web framework that runs the application
 
