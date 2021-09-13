@@ -39,24 +39,24 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
 
     if request.method == "POST":
+        username = request.form.get("username").lower()
         # check if username already exists in db
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+        existing_user = mongo.db.users.find_one({"username": username})
 
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
 
         register = {
-            "username": request.form.get("username").lower(),
+            "username": username,
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
+        session["user"] = username
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile", username=username))
 
     return render_template("register.html")
 
@@ -68,19 +68,18 @@ def login():
         return redirect(url_for("profile", username=session["user"]))
 
     if request.method == "POST":
+        username = request.form.get("username").lower()
         # check if username exists in db
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+        existing_user = mongo.db.users.find_one({"username": username})
 
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
+                session["user"] = username
                 flash("Welcome, {}".format(
                     request.form.get("username")))
-                return redirect(url_for(
-                    "profile", username=session["user"]))
+                return redirect(url_for("profile", username=username))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
