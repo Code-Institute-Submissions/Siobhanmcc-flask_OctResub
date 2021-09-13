@@ -36,7 +36,7 @@ def search():
 def register():
 
     if is_authenticated():
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile"))
 
     if request.method == "POST":
         username = request.form.get("username").lower()
@@ -56,7 +56,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = username
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=username))
+        return redirect(url_for("profile"))
 
     return render_template("register.html")
 
@@ -65,7 +65,7 @@ def register():
 def login():
 
     if is_authenticated():
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile"))
 
     if request.method == "POST":
         username = request.form.get("username").lower()
@@ -79,7 +79,7 @@ def login():
                 session["user"] = username
                 flash("Welcome, {}".format(
                     request.form.get("username")))
-                return redirect(url_for("profile", username=username))
+                return redirect(url_for("profile"))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -93,8 +93,8 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
     if is_authenticated():
         username = mongo.db.users.find_one_or_404(
             {"username": session["user"]})["username"]
