@@ -3,7 +3,7 @@
 This is the milestone project that I have created for the “Data Centric Development” module, which is part of “Full Stack Web Development Course” offered by Code Institute.
 
 I love cooking and trying new recipes. I usually collect recipes from Youtube and other public sites and adapt them to my taste. This was a perfect opportunity to build a cookbook application where I can save all my favorite recipes at one source and share with my friends who ask me for recipes. 
-It also allows others to add and store their recipes securely. The link for the site is here: http://flask-project-milestone-3.herokuapp.com/login
+It also allows others to add and store their recipes securely. The link for the site is here: http://flask-project-milestone-3.herokuapp.com
 
 ![](static/images/recipes-all-devices-scrshot.png)
 
@@ -275,8 +275,6 @@ Username : Admin Password: ungoo4La
 The following validation services were used to check the validity of the website code.
 
 W3C Markup Validation was used to validate HTML.
-
-Unfortunately the W3C Validator for HTML does not understand the Jinja templating syntax, so it therefore shows a lot of errors with regards to {{ variables }}, {% for %} {% endfor %}, etc. Aside from the Jinja warnings and errors, all of the remaining code is perfectly validating. Also due to the Jinja templating, certain elements cannot be 'beautified' across multiple lines, and must remain on a single line.
 
 W3C CSS validation was used to validate CSS.
 
