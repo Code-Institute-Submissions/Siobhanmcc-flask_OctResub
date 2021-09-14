@@ -1,72 +1,73 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-blue-text text-darken-4 center-align">Add Recipe</h3>
+<h3 class="light-blue-text text-darken-4 center-align">Add Recipe</h3>
 
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
-            <!-- category selection -->
-			<div class="row">
-				<div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-					<select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
-                        {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endfor %}
-                    </select>
-					<label for="category_name">Recipe Category</label>
-				</div>
-			</div>
-            <!-- recipe name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="task_name" name="recipe_name" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
-                    <label for="recipe_name">Recipe Name</label>
-                </div>
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+        <!-- category selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="categoryName" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Choose Category</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="categoryName">Recipe Category</label>
             </div>
-            <!-- recipe description -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="recipe_description" name="recipe_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="recipe_description">Recipe Description</label>
-                </div>
+        </div>
+        <!-- recipe name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                <input id="recipeName" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
+                    required>
+                <label for="recipeName">Recipe Name</label>
             </div>
+        </div>
+        <!-- recipe description -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                <textarea id="recipeDescription" name="recipe_description" minlength="5" maxlength="200"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="recipeDescription">Recipe Description</label>
+            </div>
+        </div>
 
-                   <!-- add button -->
-                            <a id="add_ingredient" class="btn waves-effect waves-light light-green"><i class="fas fa-plus"></i></a>
-                            <!-- Remove button -->
-                            <a id="remove_ingredient" class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
-                            <div class="addIngredient new-ingredient ingredient">
-                                <div class="input-field whites-4">
-                                    
-                                    <textarea id="ingredients" placeholder="Ingredients" name="ingredients[]" class="materialize-textarea ingredients validate" minlength="3" maxlength="200" required></textarea>
-  
-                                    </div>
-                            </div>
-     
-             <!-- recipe method -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="recipe_description" name="recipe_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="recipe_description">Recipe Method</label>
-                </div>
+        <div class="addIngredient new-ingredient ingredient">
+            <div class="input-field whites-4">
+
+                <textarea id="ingredients" placeholder="Ingredients" name="ingredients[]"
+                    class="materialize-textarea ingredients validate" minlength="3" maxlength="200" required></textarea>
+
             </div>
-            <!-- submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Add Recipe <i class="fas fa-plus-square right"></i>
-                    </button>
-                </div>
+        </div>
+        <!-- add button -->
+        <a id="add_ingredient" class="btn waves-effect waves-light light-green"><i class="fas fa-plus"></i></a>
+        <!-- Remove button -->
+        <a id="remove_ingredient" class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
+
+        <!-- recipe method -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="200"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="recipe_description">Recipe Method</label>
             </div>
-        </form>
-    </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    Add Recipe <i class="fas fa-plus-square right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

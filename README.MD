@@ -177,40 +177,39 @@ A user with admin access can login and add, edit or delete a category.
 
 Languages
 
-HTML used as the markup language
+- HTML used as the markup language
 
-CSS used as the base for cascading styles.
+- CSS used as the base for cascading styles.
 
-JavaScript used mostly for DOM manipulation
+- JavaScript used mostly for DOM manipulation
 
-Python3 used to run the backend application
+- Python3 used to run the backend application
 
 Libraries
-Google Fonts provided the fonts used throughout the project
 
-Font Awesome v5.8.2 to provide the icon set
+- Google Fonts provided the fonts used throughout the project
 
-Materialize v1.0.0 used as the CSS framework for the project
+- Font Awesome v5.8.2 to provide the icon set
 
-jQuery used as the primary JavaScript functionality.
+- Materialize v1.0.0 used as the CSS framework for the project
 
-Flask v1.0.2 is the micro web framework that runs the application
+- jQuery used as the primary JavaScript functionality.
 
-Jinja v2.10.1 is the default templating language for flask and is used to display data from the python application in the frontend html pages
+- Flask v1.0.2 is the micro web framework that runs the application
 
-PyMongo 2.3.0 was used to enable the python application to access the Mongo database
+- Jinja v2.10.1 is the default templating language for flask and is used to display data from the python application in the frontend html pages
+
+- PyMongo 2.3.0 was used to enable the python application to access the Mongo database
 
 Tools
 
-MongoDB Atlas is used to store my database in the 'cloud'.
+- MongoDB Atlas is used to store my database in the 'cloud'.
 
-Git is used for version control
+- Git is used for version control
 
-GitHub provides hosting for software development version control using Git
+- GitHub provides hosting for software development version control using Git
 
-Balsamiq was used to create the wireframes when initially planning this project
-
-Am I Responsive to create the images in this readme file.
+- Balsamiq was used to create the wireframes when initially planning this project
 
 ## Hosting
 Heroku is used to host the app
@@ -248,7 +247,7 @@ These recipes are then visible on the home page and can be edited or deleted fro
 
 ![](static/images/home-page.png)
 
-![](static/images/edit-task.png)
+![](static/images/edit-recipe.png)
 
 5. Search functionality
 
