@@ -32,22 +32,15 @@
             </div>
         </div>
         <!-- recipe ingredients -->
-        <div class="row">
-            <div class="col s10 offset-s1">
-                <div class="card-content">
-                    <span class="card-title center">Ingredients</span>
+        <div class="addIngredient new-ingredient ingredient">
+            <div class="input-field whites-4">
 
-                    <div class="addIngredient new-ingredient ingredient">
-                        <div class="input-field whites-4">
-                            {% for ingredient in recipe.ingredients %}
-                            <textarea id="ingredients" placeholder="200g Butter" name="ingredients[]"
-                                class="materialize-textarea ingredients validate" minlength="3" maxlength="200"
-                                required>{{ ingredient }}</textarea>
-                            <!--   <input id="ingredients" type="text" placeholder="200g Butter" name="ingredients[]" class="ingredients validate" minlength="1" maxlength="100" required>{{ recipe.ingredients }}
-                            -->
-                            {% endfor %}
-                        </div>
-                    </div>
+                <textarea id="ingredients" placeholder="Ingredients" name="ingredients[]"
+                    class="materialize-textarea ingredients validate" minlength="3" maxlength="200" required></textarea>
+
+            </div>
+        </div>
+
 
                     <!-- add button -->
                     <a id="add_ingredient" class="btn waves-effect waves-light light-green"><i class="fas fa-plus"></i></a>
@@ -55,7 +48,7 @@
                     <a id="remove_ingredient" class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
                 </div>
             </div>
-        </div>
+        
 
         <!-- Recipe Method -->
         <div class="row">
