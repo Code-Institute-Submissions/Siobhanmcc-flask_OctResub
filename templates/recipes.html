@@ -41,8 +41,6 @@
                 <strong>{{ recipe.category_name }}</strong>
                 {% if recipe.image_url %}
                 <img src="{{ recipe.image_url }}" class="responsive-img" alt="{{ recipe_name }}">
-              {% else %}
-                <img src="{{ url_for('static', filename='images/defaultimg.png') }}" alt="{{ recipe_name }}">
               {% endif %} 
                 <p>{{ recipe.recipe_description }}</p>
                 <p><em>by: {{ recipe.created_by }}</em></p>

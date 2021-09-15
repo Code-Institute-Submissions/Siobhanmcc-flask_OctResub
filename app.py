@@ -129,6 +129,7 @@ def add_recipe():
         is_urgent = "on" if request.form.get("is_urgent") else "off"
         recipe = {
             "category_name": request.form.get("category_name"),
+            "image_url": request.form.get("image_url"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "ingredients": request.form.getlist("ingredients[]"),
