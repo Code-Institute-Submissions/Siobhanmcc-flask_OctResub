@@ -34,14 +34,16 @@
                 </div>
                 <div class="col s9">
                     <strong>{{ recipe.recipe_name }}</strong>
-                    {% if recipe.is_urgent == "on" %}
-                        <i class="fas fa-exclamation-circle light-blue-text text-lighten-2 tooltipped"
-                            data-position="right" data-tooltip="URGENT!"></i>
-                    {% endif %}
+    
                 </div>
             </div>
             <div class="collapsible-body">
                 <strong>{{ recipe.category_name }}</strong>
+                {% if recipe.image_url %}
+                <img src="{{ recipe.image_url }}" class="responsive-img" alt="{{ recipe_name }}">
+              {% else %}
+                <img src="{{ url_for('static', filename='images/defaultimg.png') }}" alt="{{ recipe_name }}">
+              {% endif %} 
                 <p>{{ recipe.recipe_description }}</p>
                 <p><em>by: {{ recipe.created_by }}</em></p>
             </div>
