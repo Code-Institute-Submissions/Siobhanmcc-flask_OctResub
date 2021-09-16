@@ -10,15 +10,15 @@
     {% block styles %}
     {% endblock %}
 
-    <title>Recipes</title>
+    <title>RecipeShare</title>
 </head>
 <body>
    
     <header>
         <!--Top Navbar-->
-        <nav class="nav-extended text-shadow light-blue darken-1">
+        <nav class="nav-extended text-shadow light-blue darken-4">
     <div class="nav-wrapper">
-      <a href="{{url_for('get_recipes')}}" class="brand-logo">Recipes</a>
+      <a href="{{url_for('get_recipes')}}" class="brand-logo">RecipeShare</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{{url_for('get_recipes')}}">Home</a></li>

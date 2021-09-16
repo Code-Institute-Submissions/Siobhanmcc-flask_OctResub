@@ -2,6 +2,7 @@
 {% block content %}
 
     <h3 class="light-blue-text text-darken-4 center-align">All Recipes</h3>
+    <img src ="static/images/food.jpeg" alt="food image" width=400 height=300 class="center">
 
     <div class="row card-panel grey lighten-5">
      <form action="{{url_for('search')}}" method="post" class="col s12">
@@ -24,7 +25,7 @@
     <ul class="collapsible">
         {% for recipe in recipes %}
         <li>
-            <div class="collapsible-header white-text light-blue darken-4 text-shadow">
+            <div class="collapsible-header white-text grey text-shadow">
                 <div class="col s3">
                     <i class="fas fa-caret-down"></i>
                     {% if session.user|lower == recipe.created_by|lower %}
