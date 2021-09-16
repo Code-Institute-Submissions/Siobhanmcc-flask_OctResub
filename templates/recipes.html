@@ -33,12 +33,12 @@
                     {% endif %}
                 </div>
                 <div class="col s9">
-                    <strong>{{ recipe.recipe_name }}</strong>
+                   <strong>{{ recipe.recipe_name }}</strong>
     
                 </div>
             </div>
             <div class="collapsible-body">
-                <strong>{{ recipe.category_name }}</strong>
+               <p><strong>{{ recipe.category_name }}</strong></p> 
                 {% if recipe.image_url %}
                 <img src="{{ recipe.image_url }}" class="responsive-img" alt="{{ recipe_name }}">
               {% endif %} 
