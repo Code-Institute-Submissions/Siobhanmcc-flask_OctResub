@@ -4,6 +4,11 @@
      object-fit:cover;
 }
 
+.image {
+    max-height:150px;
+    max-width: 150px;
+}
+
 .center {
     display: block;
     margin-left: auto;
