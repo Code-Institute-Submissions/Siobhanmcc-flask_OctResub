@@ -23,30 +23,33 @@
      </form>
     </div>
     {% if recipes|length >0 %}
-    <ul class="collapsible">
+   
         {% for recipe in recipes %}
-        <li>
-            <div class="collapsible-header white-text grey text-shadow">
-                <div class="col s3">
-                    <i class="fas fa-caret-down"></i>
+        
+               
+                    
+                        
+                          <div class="card">
+                            <div class="card-image">
+                              <img src="{{ recipe.image_url }}" class="responsive-img" alt="{{ recipe_name }}">
+                              <span class="card-title"><strong>{{ recipe.recipe_name }}</strong></span>
+                            </div>
+                            <div class="card-content">
+                                <p><strong>{{ recipe.category_name }}</strong></p>
+                                <p>{{ recipe.recipe_description }}</p>
+                                <p><em>by: {{ recipe.created_by }}</em></p>
+                           
+                        
+                          
+                        
                     {% if session.user|lower == recipe.created_by|lower %}
                         <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small green accent-4">Delete</a>
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                     {% endif %}
                 </div>
-                <div class="col s9">
-                  <strong>{{ recipe.recipe_name }}</strong>
                 </div>
             </div>
-            <div class="collapsible-body">
-               <p><strong>{{ recipe.category_name }}</strong></p> 
-                {% if recipe.image_url %}
-                <img src="{{ recipe.image_url }}" class="responsive-img" alt="{{ recipe_name }}">
-              {% endif %} 
-                <p>{{ recipe.recipe_description }}</p>
-                <p><em>by: {{ recipe.created_by }}</em></p>
-            </div>
-        </li>
+        
         {% endfor %}
     </ul>
     {% else %}
