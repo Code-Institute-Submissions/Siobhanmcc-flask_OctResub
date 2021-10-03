@@ -218,24 +218,24 @@ Heroku is used to host the app
 Creating an Account
 
 1. I've created my own account, and other accounts to confirm authentication and validation for creatiing account and all worked as expected.
-![](static/images/register.png)
+![](static/images/login3.png)
 On registering an account, the user receives a message saying "Registration successful".
-![](static/images/registration-successful.png)
+![](static/images/register-success.png)
 
 2. Log In To An Admin Account
 
 A user can login into an Admin account to see the full functionality of the menu. 
 
-![](static/images/login-admin.png)
+![](static/images/Admin.png)
 
 Upon logging in, there are 5 options on the navbar including 'manage categories' which is exclusive to the admin view. The user is directed to the Profile page.
 
-![](static/images/profile-page.png)
+![](static/images/admin-profile.png)
 
 3. Log Out
 
 Upon logging out of the application, a user receives a notification saying "You have been logged out".
-![](static/images/logout.png)
+![](static/images/logged-out.png)
 
 4. New Recipe 
 
