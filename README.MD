@@ -372,6 +372,8 @@ The recipes for the cookbook were sourced from various sources.
 
 The text for some of the recipe categories was taken from Wikipedia.
 
+The mini-project on backend development from Code Institute provided a basis for this app. 
+
 ## Acknowledgements
 Tutorials
 
