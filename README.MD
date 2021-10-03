@@ -241,20 +241,20 @@ Upon logging out of the application, a user receives a notification saying "You 
 
 I have successfully added new recipes.
 
-![](static/images/new-recipe-1.png)
+![](static/images/beef-stew.png)
 
 These recipes are then visible on the home page and can be edited or deleted from there.
 
-![](static/images/home-page.png)
+![](static/images/beef-stew-added.png)
 
-![](static/images/edit-recipe.png)
+![](static/images/edit-recipe2.png)
 
 5. Search functionality
 
 I have searched for recipes using the search functionality on the home page. Results come back correctly.
 
-![](static/images/search.png)
-![](static/images/search-results.png)
+![](static/images/cookies.png)
+![](static/images/cookie-results.png)
 
 6. Manage Categories
 
