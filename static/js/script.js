@@ -15,6 +15,8 @@ $(document).ready(function () {
             done: "Select"
         }
     });
+        $('.modal').modal();
+      
 
     validateMaterializeSelect();
     function validateMaterializeSelect() {
