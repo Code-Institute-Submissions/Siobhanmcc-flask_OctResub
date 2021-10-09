@@ -26,7 +26,7 @@
           <div class="row">
                 <div class="input-field ">
                     <i class="fas fa-camera material-icons prefix light-blue-text text-darken-4"></i>
-                    <input id="image_url" name="image_url" class="validate" type="url" minlength="15" placeholder="Recipe Image URL">
+                    <input id="image_url" name="image_url" class="validate" value="{{ recipe.image_url }}" type="url" minlength="15" placeholder="image_url">
                     <label for="image_url">Image Url</label>
                 </div>
             </div>
@@ -42,10 +42,12 @@
         <!-- recipe ingredients -->
         <div class="addIngredient new-ingredient ingredient">
             <div class="input-field whites-4">
-
-                <textarea id="ingredients" placeholder="Ingredients" name="ingredients[]"
+                {% for ingredient in recipe.ingredients %}
+                <textarea id="ingredients" placeholder="{{ ingredient }}" name="ingredients[]" value="{{ ingredient }}"
+                    class="materialize-textarea ingredients validate" minlength="3" maxlength="200" required>{{ingredient}}</textarea>
+                    {% endfor %}
+                    <textarea id="ingredients" name="ingredients[]"
                     class="materialize-textarea ingredients validate" minlength="3" maxlength="200" required></textarea>
-
             </div>
         </div>
                     <!-- add button -->

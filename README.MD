@@ -282,9 +282,7 @@ JSHint was used to validate JavaScript.
 
 The JS file was run through jshint.com and outside of numerous instances of $ being undefined due to using jQuery, there were no errors.
 
-PEP8 Online was used to validate Python.
-
-app.py file is completely PEP8 compliant!
+PEP8 Online was used to validate the app.py file. 
 
 Responsiveness  
 

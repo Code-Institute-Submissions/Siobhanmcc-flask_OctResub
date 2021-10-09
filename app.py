@@ -165,7 +165,7 @@ def edit_recipe(recipe_id):
             "ingredients": request.form.getlist("ingredients[]"),
             "created_by": session["user"]
         }
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+        mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)},{'$set': submit},upsert=False)
         flash("Recipe Successfully Updated")
         return redirect(url_for("get_recipes"))
 
