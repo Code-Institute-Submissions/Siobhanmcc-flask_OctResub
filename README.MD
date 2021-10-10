@@ -280,8 +280,6 @@ W3C CSS validation was used to validate CSS.
 
 JSHint was used to validate JavaScript.
 
-The JS file was run through jshint.com and outside of numerous instances of $ being undefined due to using jQuery, there were no errors.
-
 PEP8 Online was used to validate the app.py file. 
 
 Responsiveness  
