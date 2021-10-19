@@ -7,8 +7,6 @@
     vertical-align: top;
 }
 
-
-
 .responsive-img {
      max-width: 150px;
      max-height:150px;
@@ -49,5 +47,15 @@
 .collapsible-header .col strong {
     margin: 5px;
     line-height:42px;
+}
 
+.ingredients-title {
+    margin-top:15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ingredients-container {
+    margin-top: 0;
+    list-style-type: square;
+    display: list-item;
 }
