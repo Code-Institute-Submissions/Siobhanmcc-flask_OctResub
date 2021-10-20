@@ -311,13 +311,13 @@ After logging into Heroku:
 
 2. In the settings tab I clicked reveal config vars and entered the required environment variables, which in this case were:
 
-IP 0.0.0.0
+- IP 0.0.0.0
 
-PORT 5000
+- PORT 5000
 
-MONGO_URI mongodb+srv://root:r00tUser@myfirstcluster.qi6w0.mongodb.net/task_manager?retryWrites=true&w=majority
+- MONGO_URI mongodb+srv://root:r00tUser@myfirstcluster.qi6w0.mongodb.net/task_manager?retryWrites=true&w=majority
 
-SECRET secret key for flask session
+- SECRET secret key for flask session
 
 3. From the Heroku dashboard of the newly created application, I clicked on "Deploy" > "Deployment method" and select GitHub.
 
