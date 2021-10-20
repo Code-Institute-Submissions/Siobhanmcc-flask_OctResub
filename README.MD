@@ -5,7 +5,7 @@ This is the milestone project that I have created for the “Data Centric Develo
 I love cooking and trying new recipes. I usually collect recipes from Youtube and other public sites and adapt them to my taste. This was a perfect opportunity to build a cookbook application where I can save all my favorite recipes at one source and share with my friends who ask me for recipes. 
 It also allows others to add and store their recipes securely. The link for the site is here: http://flask-project-milestone-3.herokuapp.com
 
-![](static/images/recipes-all-devices-scrshot.png)
+![](static/images/scr-shot-across-devices.png)
 
 ## User Stories
 
@@ -295,18 +295,17 @@ Desktop - Chrome v.74
 Desktop - Firefox v.67
 
 ## Deployment
-Deployment To Heroku
+### Deployment To Heroku
 In order the deploy my project to Heroku I have completed the following steps:
 
-Created a Procfile with the command echo web: python run.py > Procfile.
-Created a requirement.txt file so Heroku know what python modules it will need to run my application with the command sudo pip freeze --local > requirements.txt
-Then git add and git commit the new prerequisites from the requirements.txt file and Procfile, then 'git push' the undertaking to GitHub.
-Created config Vars such as my Secret Key, IP PORT and MONGO_URI within .bashrc so I could still run the project from my own IDE
-Heroku
+1. Created a Procfile with the command echo web: python run.py > Procfile.
+2. Created a requirement.txt file so Heroku know what python modules it will need to run my    application with the command sudo pip freeze --local > requirements.txt
+3. Then git add and git commit the new prerequisites from the requirements.txt file and Procfile, then 'git push' the undertaking to GitHub.
+4. Created config Vars such as my Secret Key, IP PORT and MONGO_URI within .bashrc so I could still run the project from my own IDE
+
+### Heroku
 
 After logging into heroku I created a new app, using the name flask-project-milestone-3 and set the region to Europe.
-
-Select application
 
 In the settings tab I clicked reveal config vars and entered the required environment variables, which in this case were:
 
@@ -314,7 +313,7 @@ IP 0.0.0.0
 
 PORT 5000
 
-MONGO_URI mongodb+srv://root:<password_removed>@myfirstcluster-fai9p.mongodb.net/cook_book?retryWrites=true&w=majority
+MONGO_URI mongodb+srv://root:r00tUser@myfirstcluster.qi6w0.mongodb.net/task_manager?retryWrites=true&w=majority
 
 SECRET secret key for flask session
 
@@ -328,20 +327,21 @@ In the "Manual Deployment" section of this page, made sure the master branch is 
 
 The site is now successfully deployed.
 
-Local Deployment
+### Local Deployment
+
 Should you wish the run a local copy of this application of your local machine, you will need to follow the instructions listed below:
 
 Tools you may need:
 
-Python 3 installed on your machine https://www.python.org/downloads/
+Python 3(https://www.python.org/downloads/) installed on your machine 
 
-PIP installed on your machine https://pip.pypa.io/en/stable/installing/
+PIP(https://pip.pypa.io/en/stable/installing/) installed on your machine 
 
-Git installed on your machine: https://gist.github.com/derhuerst/1b15ff4652a867391f03
+Git(https://gist.github.com/derhuerst/1b15ff4652a867391f03) installed on your machine 
 
-A text editor such as https://code.visualstudio.com/ Visual Studio Code
+A text editor such as Visual Studio Code(https://code.visualstudio.com/)
 
-An account at https://www.mongodb.com/cloud/atlas MongoDB Atlas or MongoDB running locally on your machine
+An account at MongoDB Atlas(https://www.mongodb.com/cloud/atlas) running locally on your machine
 
 To deploy locally on your own machine, follow these steps:
 
@@ -357,8 +357,6 @@ Within the file app.py change the line app.config['SECRET_KEY'] = os.getenv('SEC
 
 Also change app.config["MONGO_URI"] = os.getenv('MONGO_URI') to app.config["MONGO_URI"] = os.getenv('MONGO_URI', ) where is the string that points to your own MongoDB.
 
-Your database should be named cook_book with collections set up as outlined in the database design section of this document. To help, you can also refer to these included JSON examples
-
 From the terminal you can then run the app with python app.py and view in a browser at http://127.0.0.1:5000/
 
 ## Credits
@@ -373,13 +371,13 @@ The mini-project on backend development from Code Institute provided a basis for
 ## Acknowledgements
 Tutorials
 
-https://www.tutorialspoint.com
+Tutorials Point(https://www.tutorialspoint.com)
 
-https://stackoverflow.com
+Stack Overflow(https://stackoverflow.com)
 
-https://www.youtube.com/watch?v=vVx1737auSE - To understand how to create the login/register functions.
+YouTube(https://www.youtube.com/watch?v=vVx1737auSE) - To understand how to create the login/register functions.
 
-https://www.quackit.com/mongodb/tutorial/mongodb_sort_query_results.cfm
+Quackit(https://www.quackit.com/mongodb/tutorial/mongodb_sort_query_results.cfm)
 
 Special thanks to Guido Cecilio Garcia, my Code Institute mentor, for his guidance and advice whilst working on this project.
 
