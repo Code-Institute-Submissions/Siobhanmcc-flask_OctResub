@@ -305,9 +305,11 @@ In order the deploy my project to Heroku I have completed the following steps:
 
 ### Heroku
 
-After logging into heroku I created a new app, using the name flask-project-milestone-3 and set the region to Europe.
+After logging into Heroku:
 
-In the settings tab I clicked reveal config vars and entered the required environment variables, which in this case were:
+1. I created a new app, using the name flask-project-milestone-3 and set the region to Europe.
+
+2. In the settings tab I clicked reveal config vars and entered the required environment variables, which in this case were:
 
 IP 0.0.0.0
 
@@ -317,15 +319,15 @@ MONGO_URI mongodb+srv://root:r00tUser@myfirstcluster.qi6w0.mongodb.net/task_mana
 
 SECRET secret key for flask session
 
-From the heroku dashboard of the newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+3. From the Heroku dashboard of the newly created application, I clicked on "Deploy" > "Deployment method" and select GitHub.
 
-Confirm the linking of the heroku app to the correct GitHub repository.
+4. I confirmed the linking of the Heroku app to the correct GitHub repository.
 
-In the heroku dashboard, click "Deploy".
+5. In the Heroku dashboard, I clicked on "Deploy".
 
-In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
+6. In the "Manual Deployment" section of this page, I made sure the master branch is selected and then click "Deploy Branch".
 
-The site is now successfully deployed.
+The site was now successfully deployed.
 
 ### Local Deployment
 
@@ -333,31 +335,31 @@ Should you wish the run a local copy of this application of your local machine, 
 
 Tools you may need:
 
-Python 3(https://www.python.org/downloads/) installed on your machine 
+[Python 3](https://www.python.org/downloads/) installed on your machine 
 
-PIP(https://pip.pypa.io/en/stable/installing/) installed on your machine 
+[PIP](https://pip.pypa.io/en/stable/installing/) installed on your machine 
 
-Git(https://gist.github.com/derhuerst/1b15ff4652a867391f03) installed on your machine 
+[Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) installed on your machine 
 
-A text editor such as Visual Studio Code(https://code.visualstudio.com/)
+A text editor such as [Visual Studio Code](https://code.visualstudio.com/)
 
-An account at MongoDB Atlas(https://www.mongodb.com/cloud/atlas) running locally on your machine
+An account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) running locally on your machine
 
 To deploy locally on your own machine, follow these steps:
 
-Save a copy of the repo on your local machine or use git clone and cd into the correct folder using the terminal.
+1. Save a copy of the repo on your local machine or use git clone and cd into the correct folder using the terminal.
 
-Create a virtual environment, using python -m venv venv where the 2nd venv is the environment name.
+2. Create a virtual environment, using python -m venv venv where the 2nd venv is the environment name.
 
-Activate the virtual environment with venv\Scripts\activate
+3. Activate the virtual environment with venv\Scripts\activate
 
-Install any required modules with pip install -r requirements.txt
+4. Install any required modules with pip install -r requirements.txt
 
-Within the file app.py change the line app.config['SECRET_KEY'] = os.getenv('SECRET') to app.config['SECRET_KEY'] = os.getenv('SECRET', '<your_key>) where <your_key> is a secret key of your choosing.
+5. Within the file app.py change the line app.config['SECRET_KEY'] = os.getenv('SECRET') to app.config['SECRET_KEY'] = os.getenv('SECRET', '<your_key>) where <your_key> is a secret key of your choosing.
 
-Also change app.config["MONGO_URI"] = os.getenv('MONGO_URI') to app.config["MONGO_URI"] = os.getenv('MONGO_URI', ) where is the string that points to your own MongoDB.
+6. Also change app.config["MONGO_URI"] = os.getenv('MONGO_URI') to app.config["MONGO_URI"] = os.getenv('MONGO_URI', ) where is the string that points to your own MongoDB.
 
-From the terminal you can then run the app with python app.py and view in a browser at http://127.0.0.1:5000/
+7. From the terminal you can then run the app with python app.py and view in a browser at http://127.0.0.1:5000/
 
 ## Credits
 
@@ -371,13 +373,13 @@ The mini-project on backend development from Code Institute provided a basis for
 ## Acknowledgements
 Tutorials
 
-Tutorials Point(https://www.tutorialspoint.com)
+[Tutorials Point](https://www.tutorialspoint.com)
 
-Stack Overflow(https://stackoverflow.com)
+[Stack Overflow](https://stackoverflow.com)
 
-YouTube(https://www.youtube.com/watch?v=vVx1737auSE) - To understand how to create the login/register functions.
+[YouTube](https://www.youtube.com/watch?v=vVx1737auSE) - To understand how to create the login/register functions.
 
-Quackit(https://www.quackit.com/mongodb/tutorial/mongodb_sort_query_results.cfm)
+[Quackit](https://www.quackit.com/mongodb/tutorial/mongodb_sort_query_results.cfm)
 
 Special thanks to Guido Cecilio Garcia, my Code Institute mentor, for his guidance and advice whilst working on this project.
 
